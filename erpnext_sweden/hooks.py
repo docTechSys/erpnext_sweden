@@ -4,11 +4,15 @@ app_publisher = "Doctech"
 app_description = "Swedish banking extensions for ERPNext (ISO 20022 / camt.053)"
 app_email = "mattias@geisler.se"
 app_license = "mit"
+required_apps = ["erpnext"]
+
+# Inject the pain.001 button into the Payment Order form
+doctype_js = {
+    "Payment Order": "public/js/payment_order.js",
+}
 
 # Apps
 # ------------------
-
-# required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [

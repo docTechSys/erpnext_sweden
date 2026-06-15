@@ -1,0 +1,208 @@
+{
+ "actions": [
+  {
+   "action": "parse_file",
+   "label": "Parse File"
+  },
+  {
+   "action": "import_transactions",
+   "label": "Import Transactions"
+  }
+ ],
+ "allow_import": 0,
+ "autoname": "SBSI-.YYYY.-.#####",
+ "creation": "2026-06-15 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "bank_account",
+  "statement_file",
+  "status",
+  "column_break_1",
+  "detected_bank",
+  "message_id",
+  "from_date",
+  "to_date",
+  "section_break_balances",
+  "opening_balance",
+  "closing_balance",
+  "currency",
+  "column_break_2",
+  "transaction_count",
+  "imported_count",
+  "section_break_transactions",
+  "transactions",
+  "section_break_errors",
+  "import_errors"
+ ],
+ "fields": [
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Bank Account",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "statement_file",
+   "fieldtype": "Attach",
+   "label": "camt.053 XML File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nParsed\nPartially Imported\nImported\nError",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "detected_bank",
+   "fieldtype": "Data",
+   "label": "Detected Bank",
+   "read_only": 1
+  },
+  {
+   "fieldname": "message_id",
+   "fieldtype": "Data",
+   "label": "Message ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "Statement From",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "Statement To",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_break_balances",
+   "fieldtype": "Section Break",
+   "label": "Balances"
+  },
+  {
+   "fieldname": "opening_balance",
+   "fieldtype": "Currency",
+   "label": "Opening Balance",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "closing_balance",
+   "fieldtype": "Currency",
+   "label": "Closing Balance",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transaction_count",
+   "fieldtype": "Int",
+   "label": "Total Transactions",
+   "read_only": 1
+  },
+  {
+   "fieldname": "imported_count",
+   "fieldtype": "Int",
+   "label": "Imported",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_transactions",
+   "fieldtype": "Section Break",
+   "label": "Transactions"
+  },
+  {
+   "fieldname": "transactions",
+   "fieldtype": "Table",
+   "label": "Transactions",
+   "options": "Sweden Bank Statement Transaction"
+  },
+  {
+   "fieldname": "section_break_errors",
+   "fieldtype": "Section Break",
+   "label": "Import Errors",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "import_errors",
+   "fieldtype": "Small Text",
+   "label": "Errors",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-06-15 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ERPNext Sweden",
+ "name": "Sweden Bank Statement Import",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "bank_account",
+ "track_changes": 1
+}
